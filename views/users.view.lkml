@@ -104,11 +104,6 @@ view: users {
     sql: concat(${city}, ", ",${state});;
   }
 
-  dimension: traffic_source {
-    type: string
-    sql: ${TABLE}.traffic_source ;;
-  }
-
   measure: count {
     type: count
     drill_fields: [detail*]

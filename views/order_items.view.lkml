@@ -17,6 +17,21 @@ view: order_items {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Inventory Item ID" in Explore.
 
+  dimension_group: shipped {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.shipped_at ;;
+  }
+
   dimension_group: created {
     type: time
     timeframes: [
@@ -30,6 +45,7 @@ view: order_items {
     ]
     sql: ${TABLE}.created_at ;;
   }
+
 
   dimension_group: delivered {
     type: time
@@ -89,6 +105,14 @@ view: order_items {
     type: number
     sql: ${TABLE}.sale_price ;;
   }
+
+  dimension_group: shipping_days {
+    type: duration
+    sql_start: ${shipped_date};;
+    sql_end: ${delivered_date};;
+    intervals: [day]
+  }
+
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.

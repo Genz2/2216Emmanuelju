@@ -104,6 +104,12 @@ view: users {
     sql: concat(${city}, ", ",${state});;
   }
 
+ dimension: age_tier {
+   type: tier
+  tiers: [18,25,35,45,59]
+  sql: ${age} ;;
+  style: integer
+ }
   measure: count {
     type: count
     drill_fields: [detail*]

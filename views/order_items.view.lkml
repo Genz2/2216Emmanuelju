@@ -82,6 +82,11 @@ dimension: inventory_item_id {
   sql: ${sale_price} ;;
   value_format_name: usd_0
  }
+  measure: distinct_order_count {
+    description: "A count of unique orders"
+    type: count_distinct
+    sql: ${order_id} ;;
+  }
 
   measure: count {
     type: count

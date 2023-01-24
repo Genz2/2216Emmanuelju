@@ -78,7 +78,7 @@ dimension: inventory_item_id {
     sql: ${sale_price} ;;
   }
 
- measure: total_sales {
+ measure: total_revenue {
   type: sum
   sql: ${sale_price} ;;
   value_format_name: usd_0
@@ -100,3 +100,4 @@ dimension: inventory_item_id {
     drill_fields: [id, orders.id, inventory_items.id]
   }
 }
+

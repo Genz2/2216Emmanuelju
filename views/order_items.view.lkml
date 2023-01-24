@@ -59,6 +59,7 @@ dimension: inventory_item_id {
   dimension: sale_price {
     type: number
     sql: ${TABLE}.sale_price ;;
+    value_format: "$0.00"
   }
 
 

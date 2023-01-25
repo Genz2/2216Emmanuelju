@@ -110,6 +110,10 @@ view: users {
   sql: ${age} ;;
   style: integer
  }
+  dimension: full_name_length {
+    type: number
+    sql: ${users.full_name} ··· len;;
+  }
 
   measure: count {
     type: count

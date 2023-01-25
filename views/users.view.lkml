@@ -110,6 +110,7 @@ view: users {
   sql: ${age} ;;
   style: integer
  }
+
   measure: count {
     type: count
     drill_fields: [detail*]

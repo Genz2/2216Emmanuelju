@@ -112,7 +112,7 @@ view: users {
  }
   dimension: full_name_length {
     type: number
-    sql: ${users.full_name} ··· len(${full_name}) (redshift specific fxn);;
+    sql:len(${full_name}) (redshift specific fxn);;
   }
 
   measure: count {

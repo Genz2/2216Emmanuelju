@@ -110,10 +110,6 @@ view: users {
   sql: ${age} ;;
   style: integer
  }
-  dimension: full_name_length {
-    type: number
-    sql:len(${full_name}) (redshift specific fxn);;
-  }
 
   measure: count {
     type: count

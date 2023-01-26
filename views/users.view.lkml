@@ -91,7 +91,7 @@ view: users {
 
   dimension: length_name{
     type: number
-    sql:LEN(${full_name}) ;;
+    sql:CHAR_LENGTH(${full_name}) ;;
   }
 
   dimension: state {

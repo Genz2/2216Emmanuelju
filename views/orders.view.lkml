@@ -44,7 +44,10 @@ view: orders {
     # hidden: yes
     sql: ${TABLE}.user_id ;;
   }
-
+ measure: most_recent_order{
+   type: date
+  sql: MAX(${created_date}) ;;
+ }
   measure: count {
     type: count
     drill_fields: [detail*]

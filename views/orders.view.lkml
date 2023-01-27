@@ -46,7 +46,6 @@ view: orders {
   }
  measure: most_recent_order{
    type: date
-  timeframes: [raw]
   sql: MAX(${created_date}) ;;
  }
   measure: count {
